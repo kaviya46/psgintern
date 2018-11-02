@@ -1,0 +1,71 @@
+import java.*;
+
+import java.util.Scanner;
+
+import java.util.Map;
+
+import java.util.HashMap;
+
+public class Main
+{
+
+	public static void main(String[] args) {
+
+	    Scanner sc=new Scanner(System.in);
+	  
+  int temp;
+	
+  //  String input=sc.next();
+	
+  int charOffset=sc.nextInt();
+	  
+String input = "Hello ${myKey2}, welcome to Stack Overflow. Have a nice ${myKey2}";
+	
+  
+	Map<String, String> WordMap = new HashMap<String, String>();
+   
+ WordMap.put("myKey1", "DD84");
+ 
+   WordMap.put("myKey2", "day");
+  
+  for (Map.Entry<String, String> entry : WordMap.entrySet()) {
+   
+     input = input.replace("${" + entry.getKey() + "}", entry.getValue());
+  
+  }
+    System.out.println(input);
+   
+ if(input!='\0')
+   
+ {
+      
+  System.out.println(input);
+   
+ }
+    
+else 
+    {
+	
+	char[] stringToCharArray = input.toCharArray();
+     
+   for (char output : stringToCharArray) {
+	
+		System.out.println(output);
+	
+		if(output.isNumeric())
+	
+		{
+			   temp=output*charOffset;
+	
+		}
+		    
+        System.out.println(temp);
+    
+    }
+ 
+   }
+   
+	
+}	
+
+}
